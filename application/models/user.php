@@ -22,28 +22,19 @@ class User extends CI_Model  {
 
     }
 
-    function salvar( $codigo, $area, $tipo, $grauDestaque, $titulo, $imagem, $link, $texto, $ordem, $empresa, $usuario, $stamp ) {
+    function register( $user, $email, $pass, $stamp ) {
 
+        $pass = hash('whirlpool', $pass);
         $data = array(
-            'ID_ECOMMERCE_SITE'   => $codigo,
-            'TP_AREA_SITE'        => $area,
-            'TP_CONTEUDO'         => $tipo,
-            'NR_GRAU_DESTAQUE'    => $grauDestaque,
-            'NR_ORDEM_EXIBICAO'   => $ordem,
-            'TX_TITULO'           => $titulo,
-            'TX_IMAGEM'           => $imagem,
-            'TX_LINK'             => $link,
-            'TX_TEXTO'            => $texto,
-            'CD_EMPRESA'          => $empresa,
-            'DBUSER'              => $usuario,
-            'OSUSER'              => $usuario,
+            'Username'     => $user,
+            'Password'     => $pass,
+            'email'        => $email,
+            'RegisterDate' => $stamp,
         );
 
-        $this->db->set('STAMP',"TO_DATE('$stamp','DD/MM/RR HH24:MI:SS')", false);
-
+        //$this->db->set('RegisterDate',"TO_DATE('$stamp','DD/MM/RR HH24:MI:SS')", false);
 
         $this->db->insert($this->table, $data);
-
 
     }
 

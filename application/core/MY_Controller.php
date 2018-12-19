@@ -11,7 +11,7 @@ class MY_Controller extends CI_Controller
         parent::__construct();
         $c = get_instance();
 
-        $this->dados_globais['stamp'] = date('d-m-Y H:i:s');
+        $this->dados_globais['stamp'] = date('d/m/Y H:i:s');
 
         /* Create sessions with user data */
         function setLoginData( $user ){
@@ -23,6 +23,29 @@ class MY_Controller extends CI_Controller
             $CI->nativesession->set('admin', $user->admin);
             $CI->nativesession->set('register', $user->RegisterDate);
             $CI->nativesession->set('lastLogin', $user->LoginDate);
+            $CI->nativesession->set('autenticado', true);
+
+        }
+
+        /* step two, if you have a test before register an user */
+        function loginTemporario( $user, $email, $pass ){
+
+            $CI = get_instance();
+
+            $CI->nativesession->set('user', $user);
+            $CI->nativesession->set('email', $email);
+            $CI->nativesession->set('pass', $pass);
+            $CI->nativesession->set('autenticadoTemporariamente', true);
+
+        }/* step two, if you have a test before register an user */
+        function destruirTemporario(){
+
+            $CI = get_instance();
+
+            $CI->nativesession->delete('user');
+            $CI->nativesession->delete('email');
+            $CI->nativesession->delete('pass');
+            $CI->nativesession->delete('autenticadoTemporariamente');
 
         }
 
@@ -32,28 +55,16 @@ class MY_Controller extends CI_Controller
 
             $CI = get_instance();
 
-            $CI->nativesession->delete('username', $user->Username);
-            $CI->nativesession->delete('email', $user->email);
-            $CI->nativesession->delete('admin', $user->admin);
-            $CI->nativesession->delete('register', $user->RegisterDate);
-            $CI->nativesession->delete('lastLogin', $user->LoginDate);
-
-            flashdata('alert-danger', 'Sua sessão expirou, faça login novamente!');
+            $CI->nativesession->delete('username');
+            $CI->nativesession->delete('email');
+            $CI->nativesession->delete('admin');
+            $CI->nativesession->delete('register');
+            $CI->nativesession->delete('lastLogin');
+            $CI->nativesession->delete('autenticado');
 
             redirect($CI->router->class.'/login');
 
         }
-
-        /* ===== FUNÇÃO FLASHDATA ===== */
-        function flashdata( $classe, $mensagem ){
-
-            $ci = get_instance();
-
-            $ci->session->set_flashdata('classe', $classe);
-            $ci->session->set_flashdata('mensagem', $mensagem);
-
-        }
-        /* ===== FIM FUNÇÃO FLASHDATA ===== */
 
 
         function upload( $pasta, $fonte, $nome, $tamanho_max = '20480' ){
@@ -130,12 +141,12 @@ class MY_Controller extends CI_Controller
 
 
         /* ==================== VERIFICAÇÃO LOGIN ==================== */
-        $permitidas = array('welcome/login', 'welcome', 'welcome/logout', 'welcome/authme');
+        $permitidas = array('ucp/login', 'ucp', 'ucp/logout', 'ucp/dbAuthme', 'ucp/registrar', 'ucp/dbRegister', 'ucp/questionario', 'ucp/dbRegisterStepTwo');
 
         if( !$this->nativesession->get('username') ){
             if( !in_array($this->router->class.'/'.$this->router->method, $permitidas) ){
                 !$this->nativesession->set('usuario_url_redirecionar', current_url());
-                redirect('welcome/login');
+                redirect('ucp/login');
             }
         }
         /* ==================== FIM VERIFICAÇÃO LOGIN ==================== */

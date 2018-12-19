@@ -5,21 +5,14 @@ class Characters extends MY_Controller {
 	public function index()
 	{
 
-	    redirect( $this->router->class . '/list');
+	    redirect( $this->router->class . '/listar');
 
 	}
 	 
 	public function cadastrar()
 	{
-       /* $r = $this->db->query("SELECT * FROM CEJO_USUARIOS_SISTEMA");
-        foreach ($r->result() as $i) {
-            echo "<pre>";
-            print_r($i);
-            echo "</pre>";
-        }
-        exit;*/
         $this->load->view('estruturas/topo_ucp');
-        $this->load->view( $this->router->class . '/new');
+        $this->load->view( $this->router->class . '/cadastrar');
 	}
 
 	public function editar()
@@ -31,16 +24,11 @@ class Characters extends MY_Controller {
 	    if ( true ) {
 
             $this->load->view('estruturas/topo_ucp');
-            $this->load->view( $this->router->class . '/edit', $data);
+            $this->load->view( $this->router->class . '/editar', $data);
             $this->load->view('estruturas/rodape');
 
 
         }
-/*
-
-        flashdata('alert-success', 'Objeto não encontrado!');
-        redirect( $this->router->class . '/list' );*/
-
 	}
 
 	public function listar()
@@ -51,7 +39,7 @@ class Characters extends MY_Controller {
 
         $data['objetos'] = $this->character->getAllByUsername( $this->nativesession->get('username') );
 
-        $this->load->view( $this->router->class . '/list', $data);
+        $this->load->view( $this->router->class . '/listar', $data);
 	}
 
 	public function DB()
@@ -128,17 +116,6 @@ class Characters extends MY_Controller {
 
             }
         }
-
-
-        flashdata('alert-success', 'Operação realizada com sucesso!');
-        redirect($this->router->class . '/list');
-
-        /*     } else {
-
-                 flashdata('alert-success', 'Ocorreu um problema ao realizar a operação!');
-
-             }*/
-
     }
 
 

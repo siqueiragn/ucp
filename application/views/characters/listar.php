@@ -48,7 +48,9 @@
 
                         <?php }
 
-                    } ?>
+                    } else { ?>
+                        <h5 class="text-center">Oh, parece que você não tem nenhum personagem, que tal criar um?</h5>
+                    <?php } ?>
 				   
 				</div>
 				<!-- /.panel-body -->
