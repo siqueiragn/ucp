@@ -29,7 +29,7 @@
 
                                 <div class="panel panel-default">
                                     <div class="panel-heading text-center">
-                                        <?php echo $linha->Character;?>
+                                        <?php echo $linha->Username;?>
                                     </div>
 
                                     <div class="panel-body text-center">

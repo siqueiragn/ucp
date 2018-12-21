@@ -18,11 +18,11 @@ class MY_Controller extends CI_Controller
 
             $CI = get_instance();
 
-            $CI->nativesession->set('username', $user->Username);
-            $CI->nativesession->set('email', $user->email);
-            $CI->nativesession->set('admin', $user->admin);
-            $CI->nativesession->set('register', $user->RegisterDate);
-            $CI->nativesession->set('lastLogin', $user->LoginDate);
+            $CI->nativesession->set('userID', $user->uID);
+            $CI->nativesession->set('username', $user->uNome);
+            $CI->nativesession->set('email', $user->uEmail);
+            $CI->nativesession->set('admin', $user->uNadmin);
+            $CI->nativesession->set('register', $user->uRegisterDate);
             $CI->nativesession->set('autenticado', true);
 
         }
@@ -49,12 +49,23 @@ class MY_Controller extends CI_Controller
 
         }
 
+        function calcularIdadade( $data )
+        {
+
+            list($dia, $mes, $ano) = explode('/', $data);
+            $hoje = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
+            $nascimento = mktime( 0, 0, 0, $mes, $dia, $ano);
+            return floor((((($hoje - $nascimento) / 60) / 60) / 24) / 365.25);
+
+        }
+
 
         function logout()
         {
 
             $CI = get_instance();
 
+            $CI->nativesession->delete('userID');
             $CI->nativesession->delete('username');
             $CI->nativesession->delete('email');
             $CI->nativesession->delete('admin');

@@ -25,6 +25,8 @@
     <meta name="author" content="">
 
     <!-- Bootstrap Core CSS -->
+    <link rel="icon" href="<?php echo site_url( '../assets/images/favicon.png');?>" type="image/gif" sizes="16x16">
+
     <link href="<?php echo site_url('../assets/css/bootstrap.min.css');?>" rel="stylesheet">
     <link href="<?php echo site_url('../assets/css/custom_ucp.css');?>" rel="stylesheet">
     <link href="<?php echo site_url('../assets/css/alertify.min.css');?>" rel="stylesheet">

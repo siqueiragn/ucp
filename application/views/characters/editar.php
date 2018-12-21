@@ -8,7 +8,7 @@
 
                                     <div class="panel panel-default">
                                         <div class="panel-heading text-left">
-                                            <?php echo cleanName($objeto->Character);?>
+                                            <?php echo cleanName($objeto->Username);?>
                                         </div>
 
                                         <div class="panel-body text-center">
@@ -21,21 +21,21 @@
                                                 <div class="form-group">
                                                     <label class="col-lg-2 col-xs-2 control-label" id="basic-addon1">Money $</label>
                                                     <div class="col-lg-10 col-xs-10">
-                                                        <input type="text" class="form-control input-sm" value="<?php echo $objeto->Money;?>">
+                                                        <input type="text" class="form-control input-sm" value="<?php echo $objeto->Grana;?>" readonly>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label class="col-lg-2 col-xs-2 control-label" id="basic-addon1">Bank $</label>
                                                     <div class="col-lg-10 col-xs-10">
-                                                        <input type="text" class="form-control input-sm" value="<?php echo $objeto->BankMoney;?>">
+                                                        <input type="text" class="form-control input-sm" value="<?php echo $objeto->Grana;?>" readonly>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label class="col-lg-2 col-xs-2 control-label" id="basic-addon1">Savings $</label>
                                                     <div class="col-lg-10 col-xs-10">
-                                                        <input type="text" class="form-control input-sm" value="<?php echo $objeto->Savings;?>">
+                                                        <input type="text" class="form-control input-sm" value="<?php echo $objeto->Grana;?>" readonly>
                                                     </div>
                                                 </div>
                                         </div>
