@@ -49,3 +49,47 @@ function mustBeEqual() {
          }
     }
 }
+
+function changeSkin( src, direction ) {
+
+    skin = parseInt($('#skin').val());
+
+    skin += parseInt(direction);
+    if ( skin > 0 && skin < 312) {
+
+        $('.img-skin').attr('src', src + '/' + skin + '.png');
+        $('#skin').val(skin);
+
+    }
+
+}
+
+function recusar_aplicacao() {
+    $('#status').val('recusar');
+
+    $('.area-recusar').removeClass('hidden');
+
+}
+
+function paginationCharacter( direction ) {
+
+    section = parseInt($('#active-section').val());
+    section += parseInt(direction);
+    if ( section > 0 && section < 5) {
+        $('.sections').addClass('hidden');
+        $('.section-' + section).removeClass('hidden');
+
+        if ( section == 1 ) {
+            $('#left-btn').addClass('disabled');
+        } else {
+            $('#left-btn').removeClass('disabled');
+        }
+        if ( section == 4 ) {
+            $('#right-btn').addClass('disabled');
+        } else {
+            $('#right-btn').removeClass('disabled');
+        }
+
+        $('#active-section').val( section );
+    }
+}

@@ -25,57 +25,57 @@
     <meta name="author" content="">
 
     <!-- Bootstrap Core CSS -->
-    <link rel="icon" href="<?php echo site_url( '../assets/images/favicon.png');?>" type="image/gif" sizes="16x16">
+    <link rel="icon" href="<?php echo site_url( '/assets/images/favicon.png');?>" type="image/gif" sizes="16x16">
 
-    <link href="<?php echo site_url('../assets/css/bootstrap.min.css');?>" rel="stylesheet">
-    <link href="<?php echo site_url('../assets/css/custom_ucp.css');?>" rel="stylesheet">
-    <link href="<?php echo site_url('../assets/css/alertify.min.css');?>" rel="stylesheet">
-    <link href="<?php echo site_url('../assets/css/bootstrap-datetimepicker.min.css');?>" rel="stylesheet">
+    <link href="<?php echo site_url('/assets/css/bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?php echo site_url('/assets/css/custom_ucp.css');?>" rel="stylesheet">
+    <link href="<?php echo site_url('/assets/css/alertify.min.css');?>" rel="stylesheet">
+    <link href="<?php echo site_url('/assets/css/bootstrap-datetimepicker.min.css');?>" rel="stylesheet">
 
     <!-- Fancybox Core CSS -->
-    <link href="<?php echo site_url('../assets/css/fancybox.css');?>" rel="stylesheet">
+    <link href="<?php echo site_url('/assets/css/fancybox.css');?>" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo site_url('../assets/css/sb-admin-2.css');?>" rel="stylesheet">
-    <link href="<?php echo site_url('../assets/css/estilos.less');?>" rel="stylesheet">
+    <link href="<?php echo site_url('/assets/css/sb-admin-2.css');?>" rel="stylesheet">
+    <link href="<?php echo site_url('/assets/css/estilos.less');?>" rel="stylesheet">
 
 	<!-- Custom Fonts -->
-	<link href="<?php echo site_url('../assets/css/font-awesome.min.css');?>" rel="stylesheet" type="text/css">
+	<link href="<?php echo site_url('/assets/css/font-awesome.min.css');?>" rel="stylesheet" type="text/css">
 	
 	<!-- MetisMenu CSS -->
-    <link href="<?php echo site_url('../assets/css/metisMenu.min.css');?>" rel="stylesheet">
+    <link href="<?php echo site_url('/assets/css/metisMenu.min.css');?>" rel="stylesheet">
 	
 	
     <!-- jQuery -->
-    <script src="<?php echo site_url('../assets/js/jquery.min.js');?>"></script>
-    <script type="text/javascript" src="<?php echo site_url('../assets/js/jquery.validationEngine.js');?>"></script>
-    <script type="text/javascript" src="<?php echo site_url('../assets/js/jquery.validationEngine-pt_BR.js');?>"></script>
+    <script src="<?php echo site_url('/assets/js/jquery.min.js');?>"></script>
+    <script type="text/javascript" src="<?php echo site_url('/assets/js/jquery.validationEngine.js');?>"></script>
+    <script type="text/javascript" src="<?php echo site_url('/assets/js/jquery.validationEngine-pt_BR.js');?>"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo site_url('../assets/js/bootstrap.min.js');?>"></script>
-    <script src="<?php echo site_url('../assets/js/alertify.min.js');?>"></script>
-    <script src="<?php echo site_url('../assets/js/moment.min.js');?>"></script>
-    <script src="<?php echo site_url('../assets/js/pt-br.js');?>"></script>
-    <script src="<?php echo site_url('../assets/js/bootstrap-datetimepicker.min.js');?>"></script>
+    <script src="<?php echo site_url('/assets/js/bootstrap.min.js');?>"></script>
+    <script src="<?php echo site_url('/assets/js/alertify.min.js');?>"></script>
+    <script src="<?php echo site_url('/assets/js/moment.min.js');?>"></script>
+    <script src="<?php echo site_url('/assets/js/pt-br.js');?>"></script>
+    <script src="<?php echo site_url('/assets/js/bootstrap-datetimepicker.min.js');?>"></script>
 
     <!-- Fancybox Core JavaScript -->
-    <script src="<?php echo site_url('../assets/js/fancybox.js');?>"></script>
+    <script src="<?php echo site_url('/assets/js/fancybox.js');?>"></script>
 
     <!-- CKEditor Core JavaScript -->
-    <script src="<?php echo site_url('../assets/js/ckeditor5-build-classic/ckeditor.js');?>"></script>
+    <script src="<?php echo site_url('/assets/js/ckeditor5-build-classic/ckeditor.js');?>"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="<?php echo site_url('../assets/js/metisMenu.min.js');?>"></script>
+    <script src="<?php echo site_url('/assets/js/metisMenu.min.js');?>"></script>
 
     <!-- Custom JavaScript -->
-    <script src="<?php echo site_url('../assets/js/funcoes.js');?>"></script>
+    <script src="<?php echo site_url('/assets/js/funcoes.js');?>"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="<?php echo site_url('../assets/js/raphael.min.js');?>"></script>
-    <script src="<?php echo site_url('../assets/js/morris.min.js');?>"></script>
+    <script src="<?php echo site_url('/assets/js/raphael.min.js');?>"></script>
+    <script src="<?php echo site_url('/assets/js/morris.min.js');?>"></script>
  
     <!-- Custom Theme JavaScript -->
-    <script src="<?php echo site_url('../assets/js/sb-admin-2.js');?>"></script>
+    <script src="<?php echo site_url('/assets/js/sb-admin-2.js');?>"></script>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -106,7 +106,7 @@
 
                 <div class="logo-header" style="margin-left: 20px; margin-top: 10px;">
                    <!-- <a href="<?php /*echo site_url();*/?>">
-                        <img src="<?php /*echo site_url('../assets/img/favicon.png');*/?>" alt="Logo" style="float: left; " >
+                        <img src="<?php /*echo site_url('/assets/img/favicon.png');*/?>" alt="Logo" style="float: left; " >
                     </a>-->
 
                     <a class="navbar-brand" href="<?php /*echo site_url();*/?>"> LSRP User Control Panel</a>
@@ -128,7 +128,7 @@
                        <!-- <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil</a>
                         </li>
                         <li class="divider"></li>-->
-                        <li><a href="<?php echo site_url('ucp/logout');?>"><i class="fa fa-sign-out fa-fw"></i>Sair</a>
+                        <li><a href="<?php echo site_url('/ucp/logout');?>"><i class="fa fa-sign-out fa-fw"></i>Sair</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -143,33 +143,34 @@
                     <ul class="nav" id="side-menu">
                        
                         <li class="panel-link">
-                            <a href="<?php echo site_url('ucp/home');?>"><i class="fa fa-home fa-fw"></i> Home</a>
-                        </li>
-                        <li class="divider">
-                            JOGADOR
+                            <a href="<?php echo site_url('/ucp/home');?>"><i class="fa fa-home fa-fw"></i> Home</a>
                         </li>
                         <li class="panel-link">
-                            <a href="<?php echo site_url('characters/listar'); ?>"><i class="fa fa-group fa-fw"></i> Personagens</a>
+                            <a href="<?php echo site_url('/characters/listar'); ?>"><i class="fa fa-group fa-fw"></i> Personagens</a>
                         </li>
-                        <li class="divider">
-                            ADMINISTRADOR
-                        </li>
+                        <?php if ($this->nativesession->get('admin') > 0 ) { ?>
 					    <li class="panel-link">
 
                                     <a class="panel-link" href="#"><i class="fa-newspaper-o fa"></i> Notícias <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a class="panel-link" href="<?php echo site_url('news/cadastrar'); ?>">Cadastrar</a>
+                                            <a class="panel-link" href="<?php echo site_url('/news/cadastrar'); ?>">Cadastrar</a>
                                         </li>
                                         <li>
-                                            <a class="panel-link" href="<?php echo site_url('news/listar'); ?>">Listar</a>
+                                            <a class="panel-link" href="<?php echo site_url('/news/listar'); ?>">Listar</a>
                                         </li>
                                     </ul>
                                     <!-- /.nav-third-level -->
-                                </li>
+                        </li>
 
-                            </ul>
+
                             <!-- /.nav-second-level -->
+
+                        <li class="panel-link">
+                            <a href="<?php echo site_url('/characters/aplicacoes'); ?>"><i class="fa fa-list fa-fw"></i> Aplicações </a>
+                        </li>
+                        <?php } ?>
+                    </ul>
 
                 </div>
                 <!-- /.sidebar-collapse -->

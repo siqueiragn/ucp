@@ -12,36 +12,77 @@
                                         </div>
 
                                         <div class="panel-body text-center">
-                                            <div class="col-lg-6 col-xs-6">
-                                            <img width="100" height="200" src="<?php echo site_url("../assets/images/skins/$objeto->Skin.png");?>" alt="">
+                                            <div class="row sections section-1">
+                                                <div class="col-lg-6 col-xs-6">
+                                                <img width="100" height="200" src="<?php echo site_url("assets/images/skins/$objeto->Skin.png");?>" alt="">
+                                                </div>
+
+                                                <div class="col-lg-6 col-xs-6">
+
+                                                    <legend class="perfil-legend">Informações Pessoais</legend>
+                                                    <p class="col-lg-12 col-xs-12 perfil-title">Data de Nascimento: <span><?php echo $objeto->Birthdate;?></span> </p>
+
+                                                    <p class="col-lg-12 col-xs-12 perfil-title">Idade: <span><?php echo $objeto->Age;?></span> </p>
+
+                                                    <p class="col-lg-12 col-xs-12 perfil-title">Sexo: <span><?php echo $objeto->Gender == 0 ? 'Masculino' : 'Feminino' ;?></span></p>
+
+                                                    <p class="col-lg-12 col-xs-12 perfil-title">Origem: <span><?php echo $objeto->Origin;?></span></p>
+
+                                                </div>
+
                                             </div>
 
-                                            <div class="col-lg-6 col-xs-6">
+                                            <div class="row sections section-1">
+                                                <div class="col-lg-12 col-xs-12">
+                                                <legend class="perfil-legend ">História</legend>
 
-                                                <div class="form-group">
-                                                    <label class="col-lg-2 col-xs-2 control-label" id="basic-addon1">Money $</label>
-                                                    <div class="col-lg-10 col-xs-10">
-                                                        <input type="text" class="form-control input-sm" value="<?php echo $objeto->Grana;?>" readonly>
-                                                    </div>
-                                                </div>
+                                                <p class="col-lg-12 col-xs-12 perfil-title"><?php echo $objeto->historia;?></p>
 
-                                                <div class="form-group">
-                                                    <label class="col-lg-2 col-xs-2 control-label" id="basic-addon1">Bank $</label>
-                                                    <div class="col-lg-10 col-xs-10">
-                                                        <input type="text" class="form-control input-sm" value="<?php echo $objeto->Grana;?>" readonly>
-                                                    </div>
                                                 </div>
+                                            </div>
 
-                                                <div class="form-group">
-                                                    <label class="col-lg-2 col-xs-2 control-label" id="basic-addon1">Savings $</label>
-                                                    <div class="col-lg-10 col-xs-10">
-                                                        <input type="text" class="form-control input-sm" value="<?php echo $objeto->Grana;?>" readonly>
-                                                    </div>
+                                            <div class="row sections section-2 hidden">
+                                                <div class="col-lg-12 col-xs-12">
+                                                <legend class="perfil-legend ">Dados Bancários</legend>
+
+                                                <p class="col-lg-12 col-xs-12 perfil-title">Bolso: <span>$ <?php echo $objeto->Grana;?></span></p>
+
+                                                <p class="col-lg-12 col-xs-12 perfil-title">Banco: <span>$ <?php echo $objeto->Grana;?></span></p>
+
+                                                <p class="col-lg-12 col-xs-12 perfil-title">Savings: <span>$ <?php echo $objeto->Grana;?></span></p>
+
+                                                <p class="col-lg-12 col-xs-12 perfil-title danger">Futuramente, vai ter mais informações aqui.</span></p>
+
+
                                                 </div>
+                                            </div>
+
+                                            <div class="row sections section-3 hidden">
+                                                <div class="col-lg-12 col-xs-12">
+                                                <legend class="perfil-legend ">Propriedades</legend>
+
+                                                    <p class="col-lg-12 col-xs-12 perfil-title">Aparentemente, você não tem nenhuma propriedade.</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="row sections section-4 hidden">
+                                                <div class="col-lg-12 col-xs-12">
+                                                <legend class="perfil-legend ">Veículos</legend>
+
+                                                    <p class="col-lg-12 col-xs-12 perfil-title">Aparentemente, você não tem nenhum veículo.</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="btn-group" role="group" aria-label="...">
+                                                    <button type="button" id="left-btn" onclick="paginationCharacter(-1);" class="btn btn-default disabled"><i class="fa fa-chevron-left"></i></button>
+                                                    <button type="button" id="right-btn" onclick="paginationCharacter(+1);" class="btn btn-default"><i class="fa fa-chevron-right"></i></button>
+                                                    <input type="hidden" id="active-section" value="1">
+                                                </div>
+                                            </div>
+
                                         </div>
-
                                     </div>
-
                             </form>
                         </div>
 
@@ -51,7 +92,6 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-
 </div>
         
 <!-- /#wrapper -->

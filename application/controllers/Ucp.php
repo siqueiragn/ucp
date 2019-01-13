@@ -15,9 +15,9 @@ class Ucp extends MY_Controller {
     public function home()
     {
 
-        $this->load->model('newsModel');
+        $this->load->model('NewsModel');
 
-        $data['noticias'] = $this->newsModel->listar(true);
+        $data['noticias'] = $this->NewsModel->listar(true);
 
         $this->load->view('estruturas/topo_ucp');
         $this->load->view('estruturas/home_ucp', $data);
@@ -54,8 +54,8 @@ class Ucp extends MY_Controller {
             $user = $this->input->post('user');
             $pass = $this->input->post('pass');
 
-            $this->load->model('user');
-            $result = $this->user->authMe($user, $pass);
+            $this->load->model('User');
+            $result = $this->User->authMe($user, $pass);
 
             if ($result->num_rows()) {
                 setLoginData($result->row());
@@ -99,10 +99,10 @@ class Ucp extends MY_Controller {
 
             if ($acertos == 8) {
 
-                $this->load->model('user');
+                $this->load->model('User');
 
-                $this->user->register($this->nativesession->get('user'), $this->nativesession->get('email'), $this->nativesession->get('pass'), $this->dados_globais['stamp']);
-                $result = $this->user->authMe($this->nativesession->get('user'), $this->nativesession->get('pass'));
+                $this->User->register($this->nativesession->get('user'), $this->nativesession->get('email'), $this->nativesession->get('pass'), $this->dados_globais['stamp']);
+                $result = $this->User->authMe($this->nativesession->get('user'), $this->nativesession->get('pass'));
                 if ($result) {
                     setLoginData($result->row());
                     destruirTemporario();
@@ -129,7 +129,7 @@ class Ucp extends MY_Controller {
             $passC = $this->input->post('confirmpass');
             $email = $this->input->post('email');
 
-            $this->load->model('user');
+            $this->load->model('User');
 
             if ($passC == $pass ) {
 

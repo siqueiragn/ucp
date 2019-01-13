@@ -7,3 +7,27 @@
     padding: 5px;
 //font-weight: bold;
 }
+
+.img-skin {
+    height: 150px;
+    width: 75px;
+}
+
+.alert-success{
+    background-color: green !important;
+}
+.alert-error{
+    background-color: red !important;
+}
+
+.danger {
+    color: red;
+}
+
+.perfil-legend {
+    text-align: left;
+    font-weight: bold;
+}
+.perfil-title{
+    text-align: left;
+}

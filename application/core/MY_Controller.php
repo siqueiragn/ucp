@@ -12,6 +12,7 @@ class MY_Controller extends CI_Controller
         $c = get_instance();
 
         $this->dados_globais['stamp'] = date('d/m/Y H:i:s');
+        $this->dados_globais['imgURL'] = site_url( '/assets/images/');
 
         /* Create sessions with user data */
         function setLoginData( $user ){

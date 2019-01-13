@@ -24,7 +24,7 @@
         <div class="panel panel-default">
 
             <div class="panel-body text-center">
-                <img src="<?php echo site_url('../assets/images/logo.png');?>" alt="">
+                <img src="<?php echo site_url('assets/images/logo.png');?>" alt="">
                 <h5 class="text-center">Bem, parece que ainda não temos novidades, que coisa, não?</h5>
             </div>
 
