@@ -23,11 +23,27 @@ class Ucp extends MY_Controller {
         $this->load->view('estruturas/home_ucp', $data);
     }
 
+    public function staff()
+    {
+
+        $this->load->model('User');
+
+        $data['objetos'] = $this->User->getCards();
+
+        $this->load->view('estruturas/topo');
+        $this->load->view('estruturas/staff', $data);
+    }
+
     public function login() {
+
+
+        $this->load->model('NewsModel');
+
+        $data['noticias'] = $this->NewsModel->listar(true);
 
         if (!$this->nativesession->get('autenticado')) {
             $this->load->view('estruturas/topo');
-            $this->load->view('estruturas/home');
+            $this->load->view('estruturas/home', $data);
         } else {
             redirect( 'ucp/home?error=1');
         }
@@ -161,6 +177,13 @@ class Ucp extends MY_Controller {
         } else {
             redirect( 'ucp/home?error=1');
         }
+
+    }
+
+    function forgotPass() {
+
+        $this->load->view('estruturas/topo');
+        $this->load->view('estruturas/forgotPass');
 
     }
 

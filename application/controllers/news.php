@@ -25,7 +25,7 @@ class News extends MY_Controller {
 
             $this->load->view('estruturas/topo_ucp');
             $this->load->view( $this->router->class . '/editar', $data);
-            $this->load->view('estruturas/rodape');
+            $this->load->view('estruturas/rodape_ucp');
 
 
         }

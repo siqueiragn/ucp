@@ -58,26 +58,26 @@ class Character extends CI_Model  {
     }
 
 
-    function atualizar( $codigo, $area, $tipo, $grauDestaque, $titulo, $imagem, $link, $texto, $ordem, $empresa, $usuario, $stamp ) {
+    function reenviar_aplicacao( $codigo, $nome, $origem, $idade, $skin, $sexo, $nascimento, $status, $historia, $questao1, $questao2, $idUsuario, $stamp ) {
 
         $data = array(
-            'TP_AREA_SITE'        => $area,
-            'TP_CONTEUDO'         => $tipo,
-            'NR_GRAU_DESTAQUE'    => $grauDestaque,
-            'NR_ORDEM_EXIBICAO'   => $ordem,
-            'TX_TITULO'           => $titulo,
-            'TX_IMAGEM'           => $imagem,
-            'TX_LINK'             => $link,
-            'TX_TEXTO'            => $texto,
-            'CD_EMPRESA'          => $empresa,
-            'DBCharacter'              => $usuario,
-            'OSCharacter'              => $usuario,
+            'Username'         => $nome,
+            'Origin'           => $origem,
+            'Age'              => $idade,
+            'Skin'             => $skin,
+            'Gender'           => $sexo,
+            'Birthdate'        => $nascimento,
+            'STATUS'           => $status,
+            'ucpOwn'           => $idUsuario,
+            'CreateDate'       => $stamp,
+            'historia'         => $historia,
+            'questao1'         => $questao1,
+            'questao2'         => $questao2,
+            'motivoRecusa'     => '',
+            'avaliadoPor'      => '',
         );
 
-        $this->db->set('STAMP',"TO_DATE('$stamp','DD/MM/RR HH24:MI:SS')", false);
-
-
-        $this->db->where('ID_ECOMMERCE_SITE', $codigo);
+        $this->db->where('ID', $codigo);
         $this->db->update($this->table, $data);
 
     }
@@ -85,6 +85,7 @@ class Character extends CI_Model  {
 
         $data = array(
             'avaliadoPor'    => $usuario,
+            'motivoRecusa'   => '',
             'STATUS'         => 1,
         );
 

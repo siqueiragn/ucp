@@ -46,7 +46,7 @@ class Characters extends MY_Controller {
                     break;
             }
 
-            $this->load->view('estruturas/rodape');
+            $this->load->view('estruturas/rodape_ucp');
         } else {
             redirect( $this->router->class . '/listar?msg=8001');
         }
@@ -147,30 +147,26 @@ class Characters extends MY_Controller {
                 break;
                 case 'atualizar':
 
-                    $codigo       = $this->input->get('cd');
-                    $tipo         = $this->input->post('tipo');
-                    $link         = $this->input->post('link');
-                    $area         = $this->input->post('area');
-                    $texto        = $this->input->post('texto');
-                    $grauDestaque = $this->input->post('grau_destaque');
-                    $ordem        = $this->input->post('ordem');
-                    $titulo       = $this->input->post('titulo');
-
-                    /* IMAGEM 1  */
-                    if( !empty( $_FILES['imagem']['name'] ) ){
-                        $ext = extensao( $_FILES['imagem']['name'] );
-                        $img = $this->router->class . '_' . $codigo.'.jpg';
-                        $per = array('jpg','jpeg','png');
-                        if( in_array($ext, $per) ){
-                            if( upload($this->router->class, 'imagem', $img) ){
-                                thumb($this->router->class, $img, 600, 400);
-                            }
-                        }
-                    }
-
-                    $this->character->atualizar($codigo, $area, $tipo, $grauDestaque, $titulo, $img, $link, $texto, $ordem, $this->nativesession->get('usuario_cd_empresa'), $this->nativesession->get('usuario_cd'), $this->dados_globais['stamp']);
 
                 break;
+                case 'reenviar':
+
+                    $codigo         = $this->input->get('cd');
+                    $nome           = str_replace(" ", "_", $this->input->post("nome") );
+                    $dataNascimento = $this->input->post("data_nascimento");
+                    $sexo           = $this->input->post("sexo");
+                    $origem         = $this->input->post("origem");
+                    $idade          = calcularIdadade( $dataNascimento );
+                    $skin           = $this->input->post('skin');
+                    $historia       = strip_tags( $this->input->post('historia') );
+                    $questao1       = strip_tags( $this->input->post('questao1') );
+                    $questao2       = strip_tags( $this->input->post('questao2') );
+
+
+                    $this->character->reenviar_aplicacao($codigo, $nome, $origem, $idade, $skin, $sexo, $dataNascimento, 0, $historia, $questao1, $questao2, $this->nativesession->get('userID'), $this->dados_globais['stamp']);
+
+
+                    break;
 
             }
 

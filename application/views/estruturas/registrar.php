@@ -1,4 +1,4 @@
-<div class="content well well-small col-lg-4 col-xs-4 col-lg-offset-4 col-xs-offset-4" style="margin-top: 10%;" >
+<div class="content well well-small col-lg-4 col-xs-4 col-lg-offset-4 col-xs-offset-4" >
     <div class="row-fluid" style="margin: 0 auto;">
         <h2> Registrar </h2>
         <form method="POST" action="<?php echo site_url($this->router->class . '/dbRegister');?>">

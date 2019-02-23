@@ -84,11 +84,14 @@ class MY_Controller extends CI_Controller
             /* FONTE = Nome do campo do arquivo */
             /* NOME = Nome para salvar o arquivo */
 
-            if ( !is_dir(getcwd(). "/assets/upload/$pasta") ) {
-                mkdir(getcwd() ."/assets/upload/$pasta", 777, true);
+            if ( !is_dir(getcwd(). "/assets/images/$pasta") ) {
+                mkdir(getcwd() ."/assets/images/$pasta", 777, true);
             }
 
-            $config['upload_path']   	= getcwd() ."/assets/upload/$pasta";
+            //echo getcwd() ."/assets/images/$pasta";
+            //exit;
+
+            $config['upload_path']   	= getcwd() ."/assets/images/$pasta";
             $config['allowed_types'] 	= '*';
             $config['file_name']     	= $nome;
             $config['max_size']      	= $tamanho_max;
@@ -151,9 +154,45 @@ class MY_Controller extends CI_Controller
             return str_replace("_", " ", $name);
         }
 
+        function modelo_email($arquivo) {
+
+            return "C:/xampp/htdocs/theproject/ucp/application/views/estruturas/mail/$arquivo";
+
+        }
+
+        function generateRandomString($length = 10) {
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $charactersLength = strlen($characters);
+            $randomString = '';
+            for ($i = 0; $i < $length; $i++) {
+                $randomString .= $characters[rand(0, $charactersLength - 1)];
+            }
+            return $randomString;
+        }
+
+
+         function authMail( &$mail )
+        {
+
+        $mail->CharSet = "utf-8";
+        $mail->IsHTML(true);
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true; // enable SMTP authentication
+        $mail->SMTPSecure = "tls"; // sets the prefix to the servier
+
+        $mail->Host = "smtp.gmail.com";
+        $mail->Port = 587;
+        $mail->Username = "lsrpdevteam@gmail.com";
+        $mail->Password = "lsrpdevteam2019";
+        $mail->From = "lsrpdevteam@gmail.com";
+        $mail->FromName = "Los Santos Roleplay";
+
+        }
+
+
 
         /* ==================== VERIFICAÇÃO LOGIN ==================== */
-        $permitidas = array('ucp/login', 'ucp', 'ucp/logout', 'ucp/dbAuthme', 'ucp/registrar', 'ucp/dbRegister', 'ucp/questionario', 'ucp/dbRegisterStepTwo');
+        $permitidas = array('ucp/login', 'ucp', 'ucp/logout', 'ucp/dbAuthme', 'ucp/registrar', 'ucp/dbRegister', 'ucp/questionario', 'ucp/dbRegisterStepTwo', 'ucp/staff', 'ucp/about', 'ucp/forgotPass', 'mails/recPassword');
 
         if( !$this->nativesession->get('username') ){
             if( !in_array($this->router->class.'/'.$this->router->method, $permitidas) ){

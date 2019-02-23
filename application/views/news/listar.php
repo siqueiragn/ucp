@@ -1,4 +1,4 @@
-<div id="page-wrapper"> 
+<div class="col-lg-10 col-xs-10 col-lg-offset-1 col-xs-offset-1">
 	<div class="row">
 		<div class="col-lg-12">
 			<h3 class="page-header">Notícias</h3>

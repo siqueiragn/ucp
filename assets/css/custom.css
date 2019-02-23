@@ -6,7 +6,7 @@ h2{
 body{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 
-    background: url('../images/background.jpg') no-repeat center center fixed;  background-size: cover;
+    background: url('../images/background.png') no-repeat center center fixed;  background-size: cover;
     cursor: url(/images/cursor.cur), default;
 }
 .text{
@@ -70,4 +70,19 @@ a.but {
 .help-form {
     color: indianred;
     font-size: 0.8em;
+}
+
+.img-avatar {
+    height: 150px;
+    width: 150px;
+    -webkit-border-radius: 90px;
+    -moz-border-radius: 90px;
+    border-radius: 90px;
+}
+.custom-hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
 }

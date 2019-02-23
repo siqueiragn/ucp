@@ -1,8 +1,8 @@
-<div id="page-wrapper">
+<div class="col-lg-10 col-xs-10 col-lg-offset-1 col-xs-offset-1">
     <br class="clear">
 	<div class="row">
         <?php if ($this->input->get('msg') == 1) { ?>
-        <div class="alert alert-warning alert-dismissible" role="alert">
+        <div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <strong>Aplicação realizada com sucesso!</strong> Em breve você será avaliado.
         </div>

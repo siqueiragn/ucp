@@ -1,5 +1,11 @@
-<div id="page-wrapper">
+<div class="col-lg-10 col-xs-10 col-lg-offset-1 col-xs-offset-1">
 
+    <?php if ($this->input->get('msg') == 8000) { ?>
+        <div class="alert alert-error alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Você não tem permissão para utilizar essa área!</strong>
+        </div>
+    <?php } ?>
     <br class="clear">
     <div class="row">
     <?php

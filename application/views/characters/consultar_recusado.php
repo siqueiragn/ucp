@@ -1,4 +1,4 @@
-<div id="page-wrapper">
+<div class="col-lg-10 col-xs-10 col-lg-offset-1 col-xs-offset-1">
     <br class="clear">
     <div class="row">
         <div class="col-lg-12">
@@ -9,7 +9,7 @@
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="row form-horizontal">
-                            <form role="form" method="POST" action="<?php echo site_url($this->router->class . '/DB?acao=salvar');?>" enctype="multipart/form-data">
+                            <form role="form" method="POST" action="<?php echo site_url($this->router->class . '/DB?acao=reenviar&cd='. $objeto->ID);?>" enctype="multipart/form-data">
 
 
                                 <div class="row">
@@ -118,8 +118,7 @@
                                 <hr>
                                 <div class="form-group">
                                     <div class="col-lg-9 col-xs-9 text-center">
-                                        <button type="submit" class="btn btn-sm btn-default">Salvar</button>
-                                        <button type="reset" class="btn btn-sm btn-default">Limpar</button>
+                                        <button type="submit" class="btn btn-sm btn-success">Reenviar aplicação</button>
                                     </div>
                                 </div>
 

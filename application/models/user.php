@@ -13,6 +13,24 @@ class User extends CI_Model  {
 
     }
 
+    function getByEmail( $mail ) {
+
+        return $this->db->select('*')
+                        ->where("uEmail = '$mail'")
+                        ->get($this->table);
+    }
+
+    function setTmpPass ( $id, $pass ) {
+
+        $data = array(
+            'tmpPass' => $pass,
+        );
+
+        $this->db->where('uID', $id);
+        $this->db->update($this->table, $data);
+
+    }
+
     function authMe( $user, $pass ) {
 
         $pass = hash('whirlpool', $pass);
@@ -37,6 +55,43 @@ class User extends CI_Model  {
         $this->db->insert($this->table, $data);
 
     }
+
+    function getByFilter( $filtro ) {
+
+        return $this->db->select('*')
+            ->where("UPPER(uNome) LIKE UPPER('%$filtro%')")
+            ->get($this->table);
+
+
+    }
+
+    function atualizar_descricao($codigo, $img, $sobre) {
+
+        if ($img == null ) {
+            $data = array(
+                'aboutme' => $sobre,
+            );
+        } else {
+            $data = array(
+                'aboutme' => $sobre,
+                'imgName' => $img,
+            );
+        }
+
+        $this->db->where('uID', $codigo);
+        $this->db->update($this->table, $data);
+
+    }
+
+    function getCards() {
+
+        return $this->db->select('*')
+            ->where("uCargo > 0")
+            ->order_by('uCargo')
+            ->get($this->table);
+
+    }
+
 
 }
 

@@ -93,3 +93,16 @@ function paginationCharacter( direction ) {
         $('#active-section').val( section );
     }
 }
+
+function validateFields( val ) {
+
+    if (val == 0) {
+        $(".cartao").attr('disabled', true);
+    }
+
+}
+
+function login() {
+    $('.register-input-group').addClass("hidden");
+    $('.login-input-group').removeClass("hidden");
+}
