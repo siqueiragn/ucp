@@ -95,12 +95,6 @@
                 <span class="glyphicon glyphicon-info-sign"></span>
             </a>
         </li>
-        <li>
-            <a href="#contact-us" class="animate">
-                <span class="desc animate"> How To Reach Us </span>
-                <span class="glyphicon glyphicon-comment"></span>
-            </a>
-        </li>
         <?php if ($this->nativesession->get('admin') > 0 ) { ?>
         <li>
             <a href="<?php echo site_url('news/listar');?>" class="animate">
@@ -109,11 +103,30 @@
             </a>
         </li>
         <li>
-            <a href="#contact-us" class="animate">
-                <span class="desc animate"> How To Reach Us </span>
-                <span class="glyphicon glyphicon-comment"></span>
+            <a href="<?php echo site_url('/characters/aplicacoes'); ?>" class="animate">
+                <span class="desc animate"> Aplicações </span>
+                <span class="glyphicon glyphicon-list-alt"></span>
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo site_url('/users/listar'); ?>" class="animate">
+                <span class="desc animate"> Usuários </span>
+                <span class="glyphicon glyphicon-eye-open"></span>
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo site_url('/users/about'); ?>" class="animate">
+                <span class="desc animate"> Cartão de Visitas </span>
+                <span class="glyphicon glyphicon-picture"></span>
             </a>
         </li>
         <?php } ?>
+
+        <li>
+            <a href="<?php echo site_url('/ucp/logout');?>" class="animate">
+                <span class="desc animate"> Desconectar </span>
+                <span class="glyphicon glyphicon-off"></span>
+            </a>
+        </li>
     </ul>
 </nav>
